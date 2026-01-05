@@ -4,9 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeria de Obras e Muros de Arrimo | São Paulo Pedras</title>
-    <meta name="description" content="Fotos reais de obras executadas. Muros de arrimo, calçamentos com paralelepípedo, fachadas de pedra madeira e muito mais." />
+    <meta name="description" content="Fotos reais de obras executadas. Veja detalhes de Muros de arrimo, calçamentos com paralelepípedo, fachadas de pedra madeira e muito mais." />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://saopaulopedras.com.br/galeria.html" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Lightbox transitions */
+        #lightbox { transition: opacity 0.3s ease; }
+        #lightbox.hidden { opacity: 0; pointer-events: none; }
+        #lightbox:not(.hidden) { opacity: 1; pointer-events: auto; }
+    </style>
 </head>
 <body class="bg-stone-50 text-stone-900 font-sans antialiased">
     
@@ -17,8 +24,9 @@
                     <span class="text-2xl font-bold tracking-tighter text-amber-500 uppercase">São Paulo</span>
                     <span class="text-xl font-light tracking-widest uppercase -mt-1">Pedras</span>
                 </a>
-                <nav class="hidden md:flex space-x-8 items-center">
+                <nav class="hidden md:flex space-x-6 items-center">
                     <a href="index.html" class="hover:text-amber-500 transition-colors font-medium">Início</a>
+                    <a href="muro-de-pedra.html" class="hover:text-amber-500 transition-colors font-medium border border-amber-600 px-3 py-1 rounded hover:bg-amber-600 hover:text-white">Muros de Pedra</a>
                     <a href="produtos.html" class="hover:text-amber-500 transition-colors font-medium">Nossas Pedras</a>
                     <a href="galeria.html" class="text-amber-500 font-bold border-b-2 border-amber-500">Galeria de Obras</a>
                     <a href="contato.html" class="hover:text-amber-500 transition-colors font-medium">Contato</a>
@@ -31,6 +39,7 @@
          <div id="mobile-menu" class="hidden md:hidden bg-stone-800 p-4 absolute w-full shadow-xl">
              <nav class="flex flex-col space-y-4">
                 <a href="index.html" class="block py-2 text-stone-300">Início</a>
+                <a href="muro-de-pedra.html" class="block py-2 text-amber-500 font-bold">Muros de Pedra</a>
                 <a href="produtos.html" class="block py-2 text-stone-300">Nossas Pedras</a>
                 <a href="galeria.html" class="block py-2 text-amber-500 font-bold">Galeria de Obras</a>
                 <a href="contato.html" class="block py-2 text-stone-300">Contato</a>
@@ -41,40 +50,126 @@
     <div class="pt-8 pb-20">
       <div class="bg-stone-100 py-12 mb-12">
         <div class="container mx-auto px-4 text-center">
-          <h1 class="text-4xl font-bold text-stone-900 mb-4">Nossas Obras</h1>
-          <p class="text-stone-600 max-w-2xl mx-auto">Confira a qualidade do nosso acabamento. Imagens reais de obras executadas pela São Paulo Pedras.</p>
+          <h1 class="text-4xl font-bold text-stone-900 mb-4">Galeria de Obras Realizadas</h1>
+          <p class="text-stone-600 max-w-2xl mx-auto">
+            Abaixo você confere a qualidade do nosso acabamento. Clique nas imagens para ver em <strong>Alta Definição</strong>.
+          </p>
         </div>
       </div>
 
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
-            <!-- Images with optimizing ALT tags for Google Images -->
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer h-64">
-              <img src="https://picsum.photos/id/1035/800/600" alt="Muro de Arrimo de Pedra Bruta em Cotia SP" title="Muro de Arrimo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center"><span class="text-white font-bold">Muro de Arrimo</span></div>
+        
+        <!-- Filter/Tags simulation for SEO semantic structure -->
+        <div class="flex flex-wrap gap-2 justify-center mb-10">
+            <span class="bg-stone-200 text-stone-600 px-3 py-1 rounded-full text-sm font-bold">Todas</span>
+            <span class="bg-white border border-stone-200 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-amber-500 hover:text-white cursor-pointer transition-colors">Muros de Arrimo</span>
+            <span class="bg-white border border-stone-200 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-amber-500 hover:text-white cursor-pointer transition-colors">Pavimentação</span>
+            <span class="bg-white border border-stone-200 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-amber-500 hover:text-white cursor-pointer transition-colors">Revestimentos</span>
+        </div>
+
+        <!-- Photo Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
+            
+            <!-- Item 1 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1035/1600/1200" 
+                 data-title="Muro de Arrimo de Pedra Bruta"
+                 data-desc="Obra realizada em Cotia-SP com sistema de drenagem completo.">
+              <img src="https://picsum.photos/id/1035/600/450" 
+                   alt="Construção de Muro de Arrimo com Pedra Bruta em Cotia SP" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Muro de Arrimo</span>
+                <span class="text-stone-300 text-xs">Cotia, SP</span>
+              </div>
             </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer h-64">
-              <img src="https://picsum.photos/id/1036/800/600" alt="Calçamento de Paralelepípedo em Condomínio Fechado" title="Pavimentação" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center"><span class="text-white font-bold">Pavimentação</span></div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1036/1600/1200"
+                 data-title="Calçamento de Paralelepípedo"
+                 data-desc="Pavimentação ecológica em condomínio fechado. Alta durabilidade.">
+              <img src="https://picsum.photos/id/1036/600/450" 
+                   alt="Calçamento de rua com paralelepípedo em condomínio" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Pavimentação</span>
+                <span class="text-stone-300 text-xs">Condomínio Fechado</span>
+              </div>
             </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer h-64">
-              <img src="https://picsum.photos/id/1037/800/600" alt="Fachada revestida com Pedra Madeira Amarela" title="Revestimento Fachada" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center"><span class="text-white font-bold">Revestimento Fachada</span></div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1037/1600/1200"
+                 data-title="Fachada Pedra Madeira Amarela"
+                 data-desc="Revestimento de fachada residencial com Pedra Madeira Amarela filete.">
+              <img src="https://picsum.photos/id/1037/600/450" 
+                   alt="Fachada de casa revestida com Pedra Madeira Amarela" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Fachada Pedra Madeira</span>
+                <span class="text-stone-300 text-xs">São Paulo, Zona Sul</span>
+              </div>
             </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer h-64">
-              <img src="https://picsum.photos/id/1038/800/600" alt="Área de Piscina com Pedra São Tomé e Filete" title="Área de Lazer" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center"><span class="text-white font-bold">Área de Lazer</span></div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1038/1600/1200"
+                 data-title="Área de Piscina Pedra São Tomé"
+                 data-desc="Piso térmico e antiderrapante para área de lazer.">
+              <img src="https://picsum.photos/id/1038/600/450" 
+                   alt="Piso de piscina com Pedra São Tomé branca" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Área de Lazer</span>
+                <span class="text-stone-300 text-xs">Campinas, SP</span>
+              </div>
+            </div>
+
+             <!-- Item 5 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1039/1600/1200"
+                 data-title="Paisagismo com Seixos"
+                 data-desc="Caminho de jardim decorado com seixos de rio e pisantes.">
+              <img src="https://picsum.photos/id/1039/600/450" 
+                   alt="Paisagismo de jardim com seixos de rio" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Paisagismo</span>
+                <span class="text-stone-300 text-xs">Jundiaí, SP</span>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item group relative overflow-hidden rounded-xl cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-300"
+                 data-full="https://picsum.photos/id/1040/1600/1200"
+                 data-title="Canjiquinha Branca"
+                 data-desc="Parede interna decorativa com filete canjiquinha branco.">
+              <img src="https://picsum.photos/id/1040/600/450" 
+                   alt="Decoração de parede interna com Canjiquinha" 
+                   class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" 
+                   loading="lazy" width="600" height="450">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <span class="text-white font-bold text-lg">Canjiquinha</span>
+                <span class="text-stone-300 text-xs">Alphaville, SP</span>
+              </div>
             </div>
         </div>
 
+        <!-- Video Section for YouTube SEO -->
         <div class="mb-12">
           <h2 class="text-3xl font-bold text-stone-900 mb-8 border-l-4 border-amber-600 pl-4">Vídeos de Obras</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="bg-stone-900 rounded-xl overflow-hidden shadow-xl">
-                <div class="relative aspect-video">
-                  <img src="https://picsum.photos/id/10/800/450" alt="Como assentar Pedra Madeira" class="w-full h-full object-cover opacity-80">
+              <div class="bg-stone-900 rounded-xl overflow-hidden shadow-xl group">
+                <div class="relative aspect-video cursor-pointer">
+                  <img src="https://picsum.photos/id/10/1280/720" alt="Vídeo: Como assentar Pedra Madeira" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                   <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform">
                       <div class="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-1"></div>
                     </div>
                   </div>
@@ -83,9 +178,36 @@
                   <h3 class="text-white font-bold text-lg">Como assentar Pedra Madeira - Passo a Passo</h3>
                 </div>
               </div>
+              <div class="bg-stone-900 rounded-xl overflow-hidden shadow-xl group">
+                <div class="relative aspect-video cursor-pointer">
+                  <img src="https://picsum.photos/id/11/1280/720" alt="Vídeo: Muro de Arrimo Antes e Depois" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer group-hover:scale-110 transition-transform">
+                      <div class="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-1"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-white font-bold text-lg">Muro de Arrimo: Antes e Depois</h3>
+                </div>
+              </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center p-4">
+        <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-amber-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="max-w-7xl max-h-screen w-full flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Ampliação" class="max-h-[85vh] object-contain shadow-2xl rounded-sm">
+            <div class="mt-4 text-center">
+                <h3 id="lightbox-title" class="text-2xl text-white font-bold"></h3>
+                <p id="lightbox-desc" class="text-stone-400 mt-1"></p>
+            </div>
+        </div>
     </div>
 
     <footer class="bg-stone-900 text-stone-400 pt-16 pb-8 border-t border-stone-800">
