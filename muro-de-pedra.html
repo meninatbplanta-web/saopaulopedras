@@ -396,6 +396,27 @@
                         <label class="block text-stone-700 font-bold mb-2 text-sm">Local da Obra</label>
                         <input type="text" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Cidade ou Bairro">
                     </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-stone-700 font-bold mb-2 text-sm">Metragem da Obra (m²)</label>
+                        <input type="number" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Ex: 50">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-stone-700 font-bold mb-2 text-sm">Prazo de Execução</label>
+                        <select class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                            <option value="">Selecione...</option>
+                            <option value="Urgente">Urgente (Imediato)</option>
+                            <option value="30 dias">Próximos 30 dias</option>
+                            <option value="Cotacao">Apenas cotando</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-stone-700 font-bold mb-2 text-sm">Observações</label>
+                        <textarea class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none h-24 resize-none" placeholder="Detalhes do terreno..."></textarea>
+                    </div>
+
                     <button class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded text-lg transition-colors">
                         Solicitar Cotação Gratuita
                     </button>
