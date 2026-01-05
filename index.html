@@ -291,20 +291,46 @@
                 <p class="text-xl text-stone-300 mb-8 max-w-2xl mx-auto relative z-10">
                     Preencha o formulário abaixo ou chame no WhatsApp. Atendemos um raio de 1.000km: SP, MG, PR, GO e DF.
                 </p>
-                <form class="max-w-md mx-auto relative z-10 bg-white p-6 rounded-xl text-left" onsubmit="event.preventDefault(); alert('Solicitação enviada! Entraremos em contato em breve.');">
+                
+                <!-- Detailed Form Replaced Here -->
+                <form class="max-w-xl mx-auto relative z-10 bg-white p-8 rounded-xl text-left shadow-2xl border border-stone-200" onsubmit="event.preventDefault(); alert('Solicitação enviada! Entraremos em contato em breve.');">
                     <div class="mb-4">
                         <label class="block text-stone-700 font-bold mb-2 text-sm">Nome Completo</label>
                         <input type="text" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Seu nome">
                     </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-stone-700 font-bold mb-2 text-sm">WhatsApp</label>
+                            <input type="tel" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="(11) 99999-9999">
+                        </div>
+                         <div>
+                            <label class="block text-stone-700 font-bold mb-2 text-sm">Local da Obra</label>
+                            <input type="text" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Cidade ou Bairro">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-stone-700 font-bold mb-2 text-sm">Metragem (m²)</label>
+                            <input type="number" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Ex: 50">
+                        </div>
+                        <div>
+                             <label class="block text-stone-700 font-bold mb-2 text-sm">Prazo</label>
+                            <select class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                                <option value="">Selecione...</option>
+                                <option value="Urgente">Urgente (Imediato)</option>
+                                <option value="30 dias">Próximos 30 dias</option>
+                                <option value="Cotacao">Apenas cotando</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="mb-4">
-                        <label class="block text-stone-700 font-bold mb-2 text-sm">WhatsApp</label>
-                        <input type="tel" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="(11) 99999-9999">
+                        <label class="block text-stone-700 font-bold mb-2 text-sm">Observações</label>
+                        <textarea class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none h-24 resize-none" placeholder="Detalhes do terreno, acesso, etc..."></textarea>
                     </div>
-                     <div class="mb-4">
-                        <label class="block text-stone-700 font-bold mb-2 text-sm">Local da Obra</label>
-                        <input type="text" class="w-full p-3 border border-stone-300 rounded focus:ring-2 focus:ring-amber-500 outline-none" placeholder="Cidade ou Bairro">
-                    </div>
-                    <button class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded text-lg transition-colors">
+
+                    <button class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded text-lg transition-colors shadow-md">
                         Solicitar Cotação Agora
                     </button>
                 </form>
