@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle, Truck, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PRODUCTS, SERVICES } from '../constants';
-import StoneConsultant from '../components/StoneConsultant';
+import FAQ from '../components/FAQ';
 
 const Home: React.FC = () => {
   return (
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SEO Text Block & Gemini Tool */}
+      {/* SEO Text Block & FAQ */}
       <section className="py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -145,9 +145,9 @@ const Home: React.FC = () => {
               </ul>
             </article>
 
-            {/* AI Tool */}
+            {/* FAQ */}
             <div className="sticky top-24">
-              <StoneConsultant />
+              <FAQ />
             </div>
           </div>
         </div>
